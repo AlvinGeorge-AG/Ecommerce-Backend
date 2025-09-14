@@ -1,11 +1,11 @@
 const express = require('express');
-
+const products = require('../products');
 const app = express();
 
-
+const data = products;
 
 app.get('/data',(req,res)=>{
-    res.send("HI");
+    res.send(data);
 })
 
 
