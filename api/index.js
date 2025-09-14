@@ -1,17 +1,11 @@
 const express = require('express');
-const path = require('path');
 const app = express();
-const products = require(path.join(__dirname, './products'));
-const data = products;
 
-app.get('/',(req,res)=>{
-    res.json(data);
-})
+// Import products from same folder
+const products = require('./products');
 
-
-
-// app.listen(3000,()=>{
-//     console.log("Rumnning!!!");
-// })
+app.get('/', (req, res) => {
+  res.json(products);
+});
 
 module.exports = app;
