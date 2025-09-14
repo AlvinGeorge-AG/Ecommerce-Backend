@@ -5,7 +5,7 @@ const app = express();
 const data = products;
 
 app.get('/',(req,res)=>{
-    res.send(data);
+    res.json(data);
 })
 
 
