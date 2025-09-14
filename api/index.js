@@ -1,7 +1,7 @@
 const express = require('express');
-const products = require('./products');
+const path = require('path');
 const app = express();
-
+const products = require(path.join(__dirname, './products'));
 const data = products;
 
 app.get('/',(req,res)=>{
@@ -10,8 +10,8 @@ app.get('/',(req,res)=>{
 
 
 
-// app.listen(3000,()=>{
-//     console.log("Rumnning!!!");
-// })
+app.listen(3000,()=>{
+    console.log("Rumnning!!!");
+})
 
 module.exports = app;
