@@ -10,8 +10,8 @@ app.get('/',(req,res)=>{
 
 
 
-app.listen(3000,()=>{
-    console.log("Rumnning!!!");
-})
+// app.listen(3000,()=>{
+//     console.log("Rumnning!!!");
+// })
 
 module.exports = app;
