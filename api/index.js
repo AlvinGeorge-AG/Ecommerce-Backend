@@ -4,7 +4,7 @@ const app = express();
 
 const data = products;
 
-app.get('/data',(req,res)=>{
+app.get('/',(req,res)=>{
     res.send(data);
 })
 
