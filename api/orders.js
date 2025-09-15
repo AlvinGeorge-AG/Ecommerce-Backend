@@ -5,7 +5,7 @@ const orders = [
         quantity: 3,
         arrivingOn: "2024-07-10",
         date:"October 12",
-        image : "artistic-bowl-set-6-piece.jpg"
+        image : "images/products/artistic-bowl-set-6-piece.jpg"
     },
     {
         name: "Bluetooth Speaker",
@@ -21,7 +21,7 @@ const orders = [
         quantity: 5,
         arrivingOn: "2024-07-15",
         date:"June 10",
-        image : "bathroom-mat.jpg"
+        image : "images/products/bathroom-mat.jpg"
     }
 ];
 
