@@ -1,11 +1,12 @@
 const express = require('express');
+const fs = require("fs");
 const app = express();
 
 const cors = require("cors"); 
 
 // Import products from same folder
 const products = require('./products');
-const cartdata = require("./cart");
+const cartdata = require("./cart.json");
 const orders = require("./orders");
 
 
@@ -33,8 +34,13 @@ app.get('/orders',(req,res)=>{
 
 app.post('/addtocart',(req,res)=>{
   console.log(req.body);
-  res.json({ message: "Data received successfully!", data: req.body });
+  cartdata.push(req.body);
+  fs.writeFileSync("./cart.json", JSON.stringify(cartdata, null, 2));
 })
+
+// app.listen(3000,()=>{
+//   console.log("Running : 3000");
+// })
 
 
 
