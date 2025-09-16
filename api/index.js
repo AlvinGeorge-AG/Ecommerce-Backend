@@ -25,7 +25,7 @@ app.get('/products', (req, res) => {
 });
 
 app.get('/cart',(req,res)=>{
-  res.json(cartdata);
+  res.send(cartdata);
 })
 
 app.get('/orders',(req,res)=>{
