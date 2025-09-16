@@ -1,17 +1,11 @@
 const express = require('express');
-const fs = require("fs");
 const app = express();
 
 const cors = require("cors"); 
 
 // Import products from same folder
 const products = require('./products');
-try{
-  const cartdata = require("./cart.json");
-}
-catch(e){
-  console.log("Error when loading the cart.json file :"+e);
-}
+const cartdata = require("./cart");
 const orders = require("./orders");
 
 
@@ -30,7 +24,7 @@ app.get('/products', (req, res) => {
 });
 
 app.get('/cart',(req,res)=>{
-  res.send(cartdata);
+  res.json(cartdata);
 })
 
 app.get('/orders',(req,res)=>{
@@ -39,17 +33,8 @@ app.get('/orders',(req,res)=>{
 
 app.post('/addtocart',(req,res)=>{
   console.log(req.body);
-  try{
-    cartdata.push(req.body);
-    fs.writeFileSync("./cart.json", JSON.stringify(cartdata, null, 2));
-  }catch(e){
-    console.log("Error when saving tothe cart.json file :"+e);
-  }
+  res.json({ message: "Data received successfully!", data: req.body });
 })
-
-// app.listen(3000,()=>{
-//   console.log("Running : 3000");
-// })
 
 
 
